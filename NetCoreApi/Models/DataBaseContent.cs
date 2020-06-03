@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace NetCoreApi.Models
-{
+{ 
     public class DataBaseContent : DbContext
     {
         public DataBaseContent(DbContextOptions<DataBaseContent> options)
