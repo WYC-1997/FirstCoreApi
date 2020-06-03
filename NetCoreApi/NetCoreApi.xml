@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetCoreApi</name>
+    </assembly>
+    <members>
+        <member name="M:NetCoreApi.Controllers.UserInfoController.GetUser(NetCoreApi.Models.Userinfo)">
+            <summary>
+            用户登录
+            </summary>
+        </member>
+    </members>
+</doc>
