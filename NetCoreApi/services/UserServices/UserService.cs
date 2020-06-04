@@ -17,8 +17,7 @@ namespace NetCoreApi.services.UserServices
 
         public async Task<bool> GetUserinfoAsync(Userinfo userinfo)
         {
-            var result = await _dataBaseContent.userinfo.FirstOrDefaultAsync(c => c.Name == userinfo.Name && c.Pwd == userinfo.Pwd);
-            return result != null ? true : false;
+            return await _dataBaseContent.userinfo.FirstOrDefaultAsync(c => c.Name == userinfo.Name && c.Pwd == userinfo.Pwd) == null ? false : true;
         }
 
         public Task<Userinfo> UserinfoAddAsync(Userinfo userinfo)

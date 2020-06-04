@@ -20,6 +20,7 @@ namespace NetCoreApi
     public class Startup
     {
         private readonly string apiName = ".NetCore API";
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";//名字随便起
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -35,6 +36,8 @@ namespace NetCoreApi
             {
                 options.UseMySql(Configuration["ConnectionString"]);
             });
+
+          
             #region swagger服务注册
 
             services.AddSwaggerGen(c =>
@@ -53,9 +56,29 @@ namespace NetCoreApi
                 c.IncludeXmlComments(xmlPath, true); // 把接口文档的路径配置进去。第二个参数表示的是是否开启包含对Controller的注释容纳
             });
             #endregion
-            //services.AddHttpClient();
+
+
+            #region 跨域
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+
+                builder => builder.AllowAnyOrigin()
+
+                .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS")
+
+                );
+            });
+
+            #endregion
+
+
+            #region 注册自定义服务  IOC
+            services.AddHttpClient();
             services.AddTransient<IUserService, UserService>();
-            //services.AddHttpClient();
+            services.AddHttpClient();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,11 +94,10 @@ namespace NetCoreApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            app.UseHttpsRedirection();
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             #region 添加swagger中间件
 

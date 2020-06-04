@@ -17,7 +17,7 @@ namespace NetCoreApi.services.StudentServices
 
         public async Task<bool> AddStudentAsync(object o)
         {
-            return await _dataBaseContent.AddAsync(o).SaveChangesAsync() > 0 ? true : false;
+            return false; //await _dataBaseContent.AddAsync(o).SaveChangesAsync() > 0 ? true : false;
         }
 
         public Task<bool> DeleteStudentOrUpdateState(string guid)

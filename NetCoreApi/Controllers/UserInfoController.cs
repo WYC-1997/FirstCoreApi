@@ -24,8 +24,8 @@ namespace NetCoreApi.Controllers
         /// 用户登录
         /// </summary>
         [AllowAnonymous] 
-        [HttpPost("action")]
-        public async Task<bool> GetUser([FromBody]Userinfo userinfo) 
+        [HttpPost]
+        public async Task<bool> GetUser(Userinfo userinfo) 
         {
             return await _userService.GetUserinfoAsync(userinfo);
         } 

@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NetCoreApi",
+    "\\NetCoreApi\\Controllers",
+    "\\NetCoreApi\\Models",
+    "\\NetCoreApi\\Properties",
+    "\\NetCoreApi\\services",
+    "\\NetCoreApi\\services\\StudentServices",
+    "\\NetCoreApi\\services\\UserServices"
   ],
+  "SelectedNode": "\\NetCoreApi\\services\\StudentServices\\IStudentServices.cs",
   "PreviewInSolutionExplorer": false
 }

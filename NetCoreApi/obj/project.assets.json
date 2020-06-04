@@ -7147,11 +7147,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\FirstCoreApi\\NetCoreApi\\NetCoreApi.csproj",
+      "projectUniqueName": "E:\\PepperGitHub\\NetCoreApi\\NetCoreApi.csproj",
       "projectName": "NetCoreApi",
-      "projectPath": "E:\\GitHub\\FirstCoreApi\\NetCoreApi\\NetCoreApi.csproj",
+      "projectPath": "E:\\PepperGitHub\\NetCoreApi\\NetCoreApi.csproj",
       "packagesPath": "C:\\Users\\mubx053\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub\\FirstCoreApi\\NetCoreApi\\obj\\",
+      "outputPath": "E:\\PepperGitHub\\NetCoreApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
